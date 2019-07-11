@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Jungle.com</h1>
+    <h3>
+      Your order has been successfully placed
+    </h3>
+    <h4><%=@user.email %></h4>
+    <p>Order reference no: <%= @order.id %></p>
+
+
+    <div class="panel panel-default items">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="2">Product</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @order.line_items.each do |item| %>
+      <%= render 'item', product: item.product, quantity: item.quantity, item_total: item.total_price %>
+    <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">
+          TOTAL:
+        </th>
+        <th>
+        <%= @order.total %>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+
+    <p>
+    Thank you for shopping with us!
+  </p>
+    <br/>
+    <p>
+      To continue shopping please click <a href='http://localhost:3000'> here</a>
+    </p>
+    
+  </body>
+</html>

@@ -1,16 +1,13 @@
-<tr>
-  <td>
-    <h4><%= product.name %></h4>
+
+    <%= image_tag product.image.tiny %>
+  
+    <h3><%= product.name %></h3>
     <br>
     <p><%= product.description %></p>
-  </td>
-  <td>
-    <%= product.price %>
-  </td>
-  <td>
-    <%= quantity %>
-  </td>
-  <td>
-    <%= item_total %> 
-  </td>
-</tr> 
+  
+    <p> Product price: <%= product.price %> </p>
+  
+    <p> Quantity: <%= quantity %> </p>
+  
+    <p> Total price: <%= item_total %> </p>
+  

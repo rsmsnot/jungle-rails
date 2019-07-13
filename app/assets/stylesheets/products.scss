@@ -76,6 +76,42 @@ main section.categories-show {
 }
 
 
+#reviews {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+#reviews td, #reviews th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#reviews tr:hover {background-color: #ddd;}
+
+#reviews th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #00BFFF;
+  color: white;
+}
+
+#reviews .user {
+  width:20%
+}
+
+#reviews .comment{
+  width:60%
+}
+
+#reviews .rating {
+  width:20%
+}
+
+.review-form {
+  width:100%
+}
+
 
 main section.products-show {
 

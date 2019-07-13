@@ -1,10 +1,10 @@
 
-<table>
+<table id="reviews">
 
 <tr>
-<td><%= review.user.first_name %></td>
-  <td><%= review.description %></td>
-  <td> <%= review.rating %> </td>
+  <td class="user"><%= review.user.first_name %></td>
+  <td class="comment"><%= review.description %></td>
+  <td class="rating"> <%= review.rating %> </td>
 </tr>
 </table>
 

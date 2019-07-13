@@ -22,23 +22,55 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Rating</dt>
+          <% if @product.reviews.length > 0 %>
+          <dd><%= @product.reviews.average(:rating)%> / 5</dd>
+          <% else %>
+          <dd> There are no rating to display</dd>
+          <% end %>
         </dl>
       </div>
     </div>
 
-    <div>
-      <table class='reviews-table'>
-          <tr>
-              <th>User</th>
-              <th>Comment</th> 
-              <th>Rating</th>
-          </tr>
-          <tr>
-      <% @product.reviews.each do |review| %>
-      <%= render 'reviews', review: review %>
+    <br>
+    <% if current_user %>
+
+    <h3>User Reviews</h3>
+    <br>
+    <h5>Please use the form below to rate/comment on the product:</h5>
+
+    <div class="review-form">
+      <%= form_for :review, url: product_reviews_path({product_id: @product.id}) do |f| %>
+      <div class="comment"><%= f.label :comment %>
+        <%= f.text_field :description %></div>
+      <div class="userrating"> <%= f.label :rating %>
+        <%= f.select :rating, 1..5 %></div>
+      <%= f.submit "submit" %>
       <% end %>
-    </tr>
-    </table>
+      <% end %>
+    </div>
+    <br>
+
+
+
+
+    <div>
+      <table id="reviews">
+        <tr>
+          <th class="user">User</th>
+          <th class="comment">Comment</th>
+          <th class="rating">Rating</th>
+        </tr>
+        <tr>
+          <% @product.reviews.reverse_each do |review| %>
+          <%= render 'reviews', review: review %>
+          <% end %>
+        </tr>
+      </table>
+
+      <br>
+      <br>
+
     </div>
 
 

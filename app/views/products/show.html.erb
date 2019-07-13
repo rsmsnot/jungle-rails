@@ -37,14 +37,20 @@
 
     <h3>User Reviews</h3>
     <br>
-    <h5>Please use the form below to rate/comment on the product:</h5>
 
+    <h5>Please use the form below to rate/comment on the product:</h5>
     <div class="review-form">
       <%= form_for :review, url: product_reviews_path({product_id: @product.id}) do |f| %>
-      <div class="comment"><%= f.label :comment %>
-        <%= f.text_field :description %></div>
-      <div class="userrating"> <%= f.label :rating %>
-        <%= f.select :rating, 1..5 %></div>
+        <%= f.label :comment %>
+        <div class="review-comment-area">
+        <%= f.text_field :description %>
+      </div>
+      <br>
+      <div class="userrating"> 
+        <%= f.label :rating %>
+        <%= f.select :rating, 1..5 %>
+      </div>
+      <br>
       <%= f.submit "submit" %>
       <% end %>
       <% end %>

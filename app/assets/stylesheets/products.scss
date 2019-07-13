@@ -109,7 +109,15 @@ main section.categories-show {
 }
 
 .review-form {
-  width:100%
+  width: 500px;
+  padding: 10px;
+  height: 160px;
+  border: 1px solid #00BFFF;
+  border-radius: 8px;
+}
+
+.review-comment-area {
+  width: 480px;
 }
 
 

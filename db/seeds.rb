@@ -133,4 +133,52 @@ cat3.products.create!({
 })
 
 
+User.create! ({
+  first_name: "Ryan",
+  last_name: "Sinnott",
+  password: "123"
+})
+
+Review.create! ({
+  product: Product.first,
+  user: User.first,
+  description: 'This is my first review',
+  rating: 1
+})
+
+Review.create! ({
+  product: Product.first,
+  user: User.first,
+  description: 'This is my second review',
+  rating: 4
+})
+
+Review.create! ({
+  product: Product.second,
+  user: User.first,
+  description: 'This is my first review',
+  rating: 5
+})
+
+Review.create! ({
+  product: Product.second,
+  user: User.first,
+  description: 'This is my second review',
+  rating: 5
+})
+
+Review.create! ({
+  product: Product.third,
+  user: User.first,
+  description: 'This is my first review',
+  rating: 3
+})
+
+Review.create! ({
+  product: Product.third,
+  user: User.first,
+  description: 'This is my second review',
+  rating: 4
+})
+
 puts "DONE!"

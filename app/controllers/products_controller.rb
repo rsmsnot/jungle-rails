@@ -9,5 +9,5 @@ class ProductsController < ApplicationController
     # @reviews = Review.where(:product @product)
     @reviews = Review.new(:product=>@product)
   end
-
+ 
 end
